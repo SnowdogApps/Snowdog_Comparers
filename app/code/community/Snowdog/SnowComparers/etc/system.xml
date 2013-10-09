@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+  <tabs>
+      <snowdog translate="label">
+          <label>Snowdog Extensions</label>
+          <sort_order>400</sort_order>
+      </snowdog>
+  </tabs>
+  <sections>
+      <snowcomparers>
+          <label>Comparers Feeds</label>
+          <tab>snowdog</tab>
+          <frontend_type>text</frontend_type>
+          <sort_order>50</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <groups>
+            <generate>
+              <label>Generating options</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>60</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+              <fields>
+                  <frequency translate="label">
+                      <label>Generation frequency</label>
+                      <frontend_type>select</frontend_type>
+                      <source_model>adminhtml/system_config_source_cron_frequency</source_model>
+                      <backend_model>snowcomparers/cron</backend_model>
+                      <sort_order>4</sort_order>
+                      <show_in_default>1</show_in_default>
+                      <show_in_website>1</show_in_website>
+                      <show_in_store>1</show_in_store>
+                  </frequency>
+                  <time translate="label">
+                      <label>Start time</label>
+                      <frontend_type>time</frontend_type>
+                      <sort_order>3</sort_order>
+                      <show_in_default>1</show_in_default>
+                      <show_in_website>1</show_in_website>
+                      <show_in_store>1</show_in_store>
+                  </time>
+				  <last_scheme>
+					<backend_model>text</backend_model>
+					<show_in_default>0</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+				  </last_scheme>
+              </fields>
+          </generate>
+        </groups>
+      </snowcomparers>
+    </sections>
+</config>

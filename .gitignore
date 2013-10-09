@@ -34,7 +34,6 @@ app/etc/enterprise.xml
 app/etc/local.xml.additional
 app/etc/local.xml.template
 app/.htaccess
-app/locale/
 app/Mage.php
 cron.php
 cron.sh
