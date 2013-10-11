@@ -96,8 +96,11 @@ class Snowdog_SnowComparers_Model_Scheme extends Mage_Core_Model_Abstract {
 
 							foreach ($data['data'] as $key => $value) {
 
-								//Check if we need an user-defined or a built-in function
-								if (in_array($value, $this->getHelper()->getFunctions())) {
+								if(strstr($value, '#')) {
+									//Handle static values
+									$result = substr($value, 1);
+								} else if (in_array($value, $this->getHelper()->getFunctions())) {
+									//Check if we need an user-defined or a built-in function
 									if (!is_array($value)) {
 										$result = call_user_func(array($this->getHelper(), "get" . ucfirst($value)), $item);
 									}

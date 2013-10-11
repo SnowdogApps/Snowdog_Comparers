@@ -18,7 +18,7 @@ class Snowdog_SnowComparers_Model_Comparers_Tradedoubler extends Snowdog_SnowCom
 		$content.="@name:name\n";
 		$content.="@productURL:productUrl\n";
 		$content.="@imageURL:smallImage\n";
-		$content.="@price:sdPrice\n";
+		$content.="@price:finalPrice\n";
 		$content.="@description:description\n";
 		$content.="categories:tradedublerCategories\n";
 		$content.="@availability:tradedublerAvailability\n";

@@ -11,7 +11,7 @@ class Snowdog_SnowComparers_Model_Comparers_Google extends Snowdog_SnowComparers
 			'id' => 'sku',
 			'title' => 'name',
 			'link' => 'productUrl',
-			'price' => 'sdPrice',
+			'price' => 'finalPrice',
 			'description' => 'description',
 			// 'condition' => '',
 			// 'gtin' => '',

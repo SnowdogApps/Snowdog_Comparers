@@ -12,7 +12,7 @@ class Snowdog_SnowComparers_Model_Comparers_Ceneo extends Snowdog_SnowComparers_
 	}
 	
 	public function getDefaultContent()	{
-		$content="o,id=sku,url=productUrl,price=sdPrice,avail=availabilityCeneo,stock=qty\n";
+		$content="o,id=sku,url=productUrl,price=finalPrice,avail=availabilityCeneo,stock=qty\n";
 		$content.="@name:name\n";
 		$content.="cat:categoriesPath\n";
 		$content.="@desc:description\n";

@@ -83,8 +83,7 @@ class Snowdog_SnowComparers_Helper_Scheme_XML extends Snowdog_SnowComparers_Help
     }
 
     public function getAttributesCeneo($item) {
-	$xml =
-		.'<a name="Kod_producenta"><![CDATA[' . $item->getSku() . ']]></a>';
+	$xml = '<a name="Kod_producenta"><![CDATA[' . $item->getSku() . ']]></a>';
 	return $xml;
     }
 

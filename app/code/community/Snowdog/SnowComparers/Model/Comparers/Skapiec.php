@@ -40,7 +40,7 @@ class Snowdog_SnowComparers_Model_Comparers_Skapiec extends Snowdog_SnowComparer
 		$content.="compid:sku\n";
 		$content.="vendor:producer\n";		
 		$content.="desc:skapiecName\n";
-		$content.="price:sdPrice\n";
+		$content.="price:finalPrice\n";
 		$content.="catid:categoriesSkapiec\n";
 		$content.="image:smallImage\n";
 		$content.="url:productUrl\n";	

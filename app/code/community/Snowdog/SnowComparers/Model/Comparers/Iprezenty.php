@@ -16,7 +16,7 @@ class Snowdog_SnowComparers_Model_Comparers_Iprezenty extends Snowdog_SnowCompar
 		$content.="@customid:sku\n";
 		$content.="@name:name\n";	
 		$content.="@description:description\n";
-		$content.="@price:sdPrice\n";
+		$content.="@price:finalPrice\n";
 		$content.="@image:smallImage\n";
 		$content.="@status:iprezentyStatus\n";
 		$content.="@url:productUrl\n";

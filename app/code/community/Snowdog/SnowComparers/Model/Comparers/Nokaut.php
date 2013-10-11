@@ -18,7 +18,7 @@ class Snowdog_SnowComparers_Model_Comparers_Nokaut extends Snowdog_SnowComparers
 		$content="offer\n";
 		$content.="@id:sku\n";
 		$content.="@name:name\n";		
-		$content.="@price:sdPrice\n";
+		$content.="@price:finalPrice\n";
 		$content.="@url:productUrl\n";
 		$content.="category:categoriesPath\n";
 		$content.="@description:description\n";

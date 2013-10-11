@@ -19,7 +19,7 @@ XML;
 		$content = <<<XML
 product,id=sku
 @name:name
-@price:sdPrice
+@price:finalPrice
 @description:description
 @productUrl:productUrl
 @imageURL:smallImage

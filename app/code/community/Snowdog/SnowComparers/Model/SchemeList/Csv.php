@@ -10,6 +10,12 @@ class Snowdog_SnowComparers_Model_SchemeList_Csv extends Mage_Core_Model_Abstrac
 		"thefind" => "The find",
 		"sas" => "SAS",
 		"sears" => "Sears",
+		"amazon" => "Amazon.com",
+		"myshopping" => "MyShopping.com",
+		"shoppingcom" => "Shopping.com",
+		"getprice" => "GetPrice.com",
+		"nextag" => "Nextag.com",
+		"shopmania" => "Shopmania.com",
 	);
 
 	public function toOptionArray($isMultiselect=true) {
