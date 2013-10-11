@@ -60,7 +60,7 @@ class Snowdog_SnowComparers_Model_Scheme extends Mage_Core_Model_Abstract {
 			$collection->addFieldToFilter('visibility', array('in' => array(
 				Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG,
 				Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
-			));
+			)));
 			$collection->addFieldToFilter('status', 1);
 
 			$collection->setPageSize(500);
