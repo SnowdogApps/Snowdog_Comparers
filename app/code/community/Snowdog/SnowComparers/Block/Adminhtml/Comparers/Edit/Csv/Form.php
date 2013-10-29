@@ -98,6 +98,14 @@ class Snowdog_SnowComparers_Block_Adminhtml_Comparers_Edit_Csv_Form extends Mage
 	    'value' => $model->getPath()
 	));
 
+		$fieldset->addField('visibility', 'select', array(
+            'label' => Mage::helper('snowcomparers')->__('Product visibility filter'),
+            'name'  => 'visibility',
+            'required' => true,            
+            'value' => $model->getVisibility(),
+				'values'   => Mage::getModel('snowcomparers/scheme_visibility')->toOptionArray()
+        ));
+
 
 	$fieldset->addField('sku_filter', 'text', array(
 	    'label' => Mage::helper('snowcomparers')->__('Product filter'),

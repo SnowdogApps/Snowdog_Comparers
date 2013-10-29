@@ -50,7 +50,9 @@ class Snowdog_SnowComparers_Adminhtml_ComparersController extends Mage_Adminhtml
 		$this->_redirect('*/*/');
 		return;
 	    }
-	    $this->_type = $model->getRealModel()->getType();
+		 if(!$this->_type) {
+			$this->_type = $model->getRealModel()->getType();
+		 }
 	}
 
 	$data = Mage::getSingleton('adminhtml/session')->getFormData(true);
@@ -114,7 +116,7 @@ class Snowdog_SnowComparers_Adminhtml_ComparersController extends Mage_Adminhtml
 	    } catch (Exception $e) {
 		Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
 		Mage::getSingleton('adminhtml/session')->setFormData($data);
-		$this->_redirect('*/*/edit', array('scheme_id' => $this->getRequest()->getParam('scheme_id')));
+		$this->_redirectReferer('*/*/');
 		return;
 	    }
 	}

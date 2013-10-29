@@ -57,10 +57,12 @@ class Snowdog_SnowComparers_Model_Scheme extends Mage_Core_Model_Abstract {
 			$collection->addStoreFilter($this->getStoreId());
 			if ($this->getSkuFilter())
 				$collection->addFieldToFilter('sku', array('in' => explode(',', $this->getSkuFilter())));
-			$collection->addFieldToFilter('visibility', array('in' => array(
-				Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG,
-				Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
-			)));
+			if ($this->getVisibility() == Snowdog_SnowComparers_Model_Scheme_Visibility::VISIBILITY_VISIBILE) {
+				$collection->addFieldToFilter('visibility', array('in' => array(
+					Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG,
+					Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
+				)));
+			}
 			$collection->addFieldToFilter('status', 1);
 
 			$collection->setPageSize(500);
@@ -76,7 +78,12 @@ class Snowdog_SnowComparers_Model_Scheme extends Mage_Core_Model_Abstract {
 				//Apply filter
 				if ($this->getSkuFilter())
 					$collection->addFieldToFilter('sku', array('in' => explode(',', $this->getSkuFilter())));
-				$collection->addFieldToFilter('visibility', array('eq' => '4'));
+				if ($this->getVisibility() == Snowdog_SnowComparers_Model_Scheme_Visibility::VISIBILITY_VISIBILE) {
+					$collection->addFieldToFilter('visibility', array('in' => array(
+						Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG,
+						Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,
+					)));
+				}
 				$collection->addFieldToFilter('status', 1);
 				$collection->setPageSize(500);
 

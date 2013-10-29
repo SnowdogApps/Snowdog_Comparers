@@ -15,6 +15,8 @@ class Snowdog_SnowComparers_Helper_Scheme extends Mage_Core_Helper_Abstract {
 	'vat',
 	'productUrl',
 	'oldPrice',
+	'parentSku',
+	'relationshipType'
     );
 
     public function getFunctions() {
@@ -129,6 +131,31 @@ class Snowdog_SnowComparers_Helper_Scheme extends Mage_Core_Helper_Abstract {
 
 	 public function getOldPrice($item) {
 		return number_format($item->getPrice(), 2, '.', '');
+	 }
+
+	 public function getParentSku($item) {
+			$link = Mage::getModel('catalog/product_type_configurable');
+			$parents = $link->getParentIdsByChild($item->getId());
+			$result = array();
+			foreach($parents as $id) {
+				$parent = Mage::getModel('catalog/product')->load($id);
+				$result[] = $parent->getSku();
+			}
+			return implode(';', $result);
+	 }
+
+	 public function getRelationshipType($item) {
+		if($item->getTypeId() == 'simple') {
+			$link = Mage::getModel('catalog/product_type_configurable');
+			$parents = $link->getParentIdsByChild($item->getId());
+			if(!empty($parents)) {
+				return 'child';
+			} else {
+				return;
+			}
+		} else if($item->getTypeId() == 'configurable') {
+			return 'parent';
+		}
 	 }
 
 }
