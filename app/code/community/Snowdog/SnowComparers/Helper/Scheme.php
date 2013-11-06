@@ -47,7 +47,7 @@ class Snowdog_SnowComparers_Helper_Scheme extends Mage_Core_Helper_Abstract {
 	$stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($item->getId());
 	$qty = $stock->getQty();
 	if($qty < 0) $qty = 0;
-	return number_format($qty,0);
+	return number_format($qty,0,'.','');
     }
 
     public function getIsInStock($item) {
